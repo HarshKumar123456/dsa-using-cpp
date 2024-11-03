@@ -1,1 +1,8 @@
+# To Ignore output files 
 *.exe
+
+# To Ignore temporary code running file 
+temp.cpp 
+
+# To Let ignore VS Code Configurations
+.vscode
