@@ -1,0 +1,90 @@
+// Sieve Of Eratosthenes
+Ismein ham basically prime numbers find karte hain assuming that the number we have now is prime 
+and then ham uske sabhi multiple ko non-prime mark kar dete hai aur phir aage badhte hain 
+
+
+// Segmented Sieve 
+Ismein ham basically prime numbers find karte hain ismein basically chunks mein todne wala scene rahta hai 
+0 to sqrt(n) where 'n' is number upto which we have to find the prime numbers 
+pahle chunk 0 to sqrt(n) ke prime numbers "Sieve Of Eratosthenes" se find karte hain 
+phir ham ek loop chalate hain jo 2 se n-1 tak chalta hai 
+aur phir ismein ham un numbers ko non-prime mark karte hain jo multiple of prime numbers in 0 to sqrt(n) hon
+
+
+// GCD 
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
+
+
+// LCM
+int lcm(int a, int b){
+    return (a*b) / gcd(a,b);
+}
+
+
+// Pigeonhole Principle
+basically ismein kya hai ki agar m Pigeonhole hain aur n Pigeons hain to at least n-m Pigeonholes mein 2 yaa 2 se adhik Pigeons honge 
+
+
+// Inclusion Exclusion Principle
+Ismein Basically ham set ke andar kitne elements honge ye calculate karte hain like: 
+n(A ∪ B) = n(A) + n(B) - n(A ∩ B)
+
+and if we have something like: 
+
+n(A ∪ B ∪ C .....) to we will first include then exclude like n(A) + n(B) + ... phir exclude possible double sets' intersection and then include possible triple sets' intersection and so on and so forth
+
+// Catalan Number
+Catalan Number = (2n!)/ [(n!)(n+1)!] for n >= 0 
+The first Catalan numbers for n = 0, 1, 2, 3, ... are: 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, ... (sequence A000108 in the OEIS).
+
+// Usually ye Segmentation Fault maarna chahiye but NAHIN MAAR raha LOCAL PC mein
+
+    int* pointer = nullptr; 
+    cout << pointer << endl; // Output --> 0 
+
+    cout << "We are here and here is ..................." << endl;
+
+    int* anotherPointer = 0;
+    cout << anotherPointer << endl; // Output --> 0 
+
+    int list[] = {1,2,3,4};
+    cout << "Now accessing the index which doesn't exist " << endl;
+    cout << list[50] << endl; // Output --> 0  But yahan Segmentation Fault maarna chahiye but NAHIN MAAR raha LOCAL PC mein
+
+
+
+    // __________________________ 
+    1. (*pointer)++ yo karenge to value at 'pointer' will increase  
+    2. *pointer++ yo karenge to address stored in 'pointer' will increase and then value at that updated address will be accessed
+    // __________________________ 
+    int number = 10;
+    int *numberPointingPointer = &number;
+    int *listPointingPointer = &(list[1]);
+
+    cout << "Magic" << endl;
+
+    cout << number << endl;
+    cout << numberPointingPointer << endl;
+    cout << *numberPointingPointer << endl;
+    cout << listPointingPointer << endl;
+    cout << *listPointingPointer << endl;
+
+    cout << "Before ______________________" << endl;
+
+    cout << (*numberPointingPointer)++ << endl;
+    cout << *numberPointingPointer++ << endl;
+    cout << *(listPointingPointer)++ << endl;
+    cout << *listPointingPointer++ << endl;
+
+    cout << "After ______________________" << endl;
+    
+    cout << number << endl;
+    cout << numberPointingPointer << endl;
+    cout << *numberPointingPointer << endl;
+    cout << listPointingPointer << endl;
+    cout << *listPointingPointer << endl;
