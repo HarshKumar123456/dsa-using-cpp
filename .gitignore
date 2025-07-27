@@ -2,7 +2,7 @@
 *.exe
 
 # To Ignore temporary code running file 
-temp.cpp 
+temp*.cpp 
 
 # To Let ignore VS Code Configurations
 .vscode
